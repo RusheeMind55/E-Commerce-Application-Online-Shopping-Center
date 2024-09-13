@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14K Gold Stud Earrings - Luxe Jewels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        .product-rating {
+            color: #FFA41C;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .product-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #B12704;
+            margin-bottom: 20px;
+        }
+        .product-description {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+        .product-features {
+            margin-bottom: 30px;
+        }
+        .product-features h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        .product-features ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .product-features li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+        .product-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .buy-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .buy-button {
+            background-color: #f7b2d8cd;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .buy-button:hover {
+            background-color: #f9f9f8;
+        }
+        .delivery-info {
+            font-size: 14px;
+            color: #007600;
+            margin-bottom: 15px;
+        }
+        .customer-reviews {
+            grid-column: 1 / -1;
+        }
+        .customer-reviews h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product-image-container">
+            <img src="/anon-ecommerce-website-master/assets/images/first.jpeg" alt="14K Gold Stud Earrings" class="product-image">
+        </div>
+        <div class="product-details">
+            <h1 class="product-title">14K Gold Stud Earrings</h1>
+            <div class="product-rating">★★★★☆ 4.5 out of 5 stars (1,234 ratings)</div>
+            <div class="product-price" style="color: #cd2ea5;">$99.99</div>
+            <div class="product-description">
+                Elevate your everyday look with these classic 14K gold stud earrings. Timeless elegance meets modern craftsmanship in these versatile pieces that complement any outfit.
+            </div>
+            <div class="product-features">
+                <h3>Product Highlights</h3>
+                <ul>
+                    <li>Genuine 14K gold for lasting quality and shine</li>
+                    <li>Classic stud design for everyday elegance</li>
+                    <li>Comfortable butterfly backs ensure secure fit</li>
+                    <li>Hypoallergenic and nickel-free for sensitive ears</li>
+                    <li>Presented in a luxurious gift box</li>
+                </ul>
+            </div>
+            <div class="buy-box">
+                <button class="buy-button">Add to Cart</button>
+                <button class="buy-button" style="background-color: #f7b2d8;"  onclick="goBuy()">Buy Now</button>
+                <p class="delivery-info">FREE delivery: Thursday, Sep 14 on orders over $25.00 shipped by Luxe Jewels</p>
+                <p>In Stock.</p>
+            </div>
+        </div>
+        <div class="customer-reviews">
+            <h3>Customer Reviews</h3>
+            <p>4.5 out of 5 stars (1,234 ratings)</p>
+            <!-- Here you would typically have a breakdown of star ratings and individual reviews -->
+        </div>
+    </div>
+    <script>
+         function goBuy() {
+            window.location.href = "Buy.html"; // Adjust the path as needed
+        }
+    </script>
+</body>
+</html>

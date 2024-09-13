@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Receipt</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .receipt-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .receipt-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .receipt-details {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .receipt-details p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .product-info {
+            margin-bottom: 20px;
+        }
+
+        .product-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .total-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #cd2ea5;
+            margin-bottom: 20px;
+        }
+
+        .welcome-message {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            font-size: 14px;
+            color: #999;
+            margin-top: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #cd2ea5;
+            color: #fff;
+        }
+
+        .btn:hover {
+            background-color: #b6228c;
+        }
+
+        .home-btn {
+            background-color: #333;
+        }
+
+        .home-btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="receipt-container">
+        <div class="receipt-header">Bill Receipt</div>
+        
+        <div class="receipt-details">
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Address:</strong> 123 Main St, City, Country</p>
+            <p><strong>Mobile No:</strong> 9876543210</p>
+            <p><strong>Date:</strong> <span id="currentDate"></span></p>
+            <p><strong>Time:</strong> <span id="currentTime"></span></p>
+        </div>
+
+        <div class="product-info">
+            <p><strong>Product:</strong> Gold Stud Earrings</p>
+            <p><strong>Quantity:</strong> 2</p>
+            <p><strong>Price per item:</strong> Rs. 410</p>
+            <p><strong>Total Price:</strong> Rs. 820</p>
+        </div>
+
+        <div class="total-price">Total Price: Rs. 820</div>
+
+        <div class="welcome-message">Thank you for your purchase! Welcome to our store!</div>
+        
+        <div class="footer">Your order has been successfully processed.</div>
+
+        <div class="buttons">
+            <button class="btn" onclick="showNotification()">Submit</button>
+            <button class="btn" onclick="downloadReceipt()">Download Receipt</button>
+            <button class="btn home-btn" onclick="goHome()">Home</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Get the current date and time
+        const currentDate = new Date();
+
+        // Format the date
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('currentDate').innerText = currentDate.toLocaleDateString('en-US', options);
+
+        // Format the time
+        const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        document.getElementById('currentTime').innerText = currentDate.toLocaleTimeString('en-US', timeOptions);
+
+        // Show notification on submit
+        function showNotification() {
+            alert("Your order has been submitted successfully!");
+        }
+
+        // Download receipt as PDF
+        function downloadReceipt() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.text("Bill Receipt", 105, 10, { align: "center" });
+            doc.text("Name: John Doe", 20, 30);
+            doc.text("Address: 123 Main St, City, Country", 20, 40);
+            doc.text("Mobile No: 9876543210", 20, 50);
+            doc.text(`Date: ${currentDate.toLocaleDateString('en-US', options)}`, 20, 60);
+            doc.text(`Time: ${currentDate.toLocaleTimeString('en-US', timeOptions)}`, 20, 70);
+            doc.text("Product: Gold Stud Earrings", 20, 90);
+            doc.text("Quantity: 2", 20, 100);
+            doc.text("Price per item: Rs. 410", 20, 110);
+            doc.text("Total Price: Rs. 820", 20, 120);
+            doc.text("Thank you for your purchase! Welcome to our store!", 20, 140);
+
+            doc.save("receipt.pdf");
+        }
+
+        // Redirect to home page
+        function goHome() {
+            window.location.href = "index.html"; // Adjust the path as needed
+        }
+    </script>
+
+</body>
+</html>

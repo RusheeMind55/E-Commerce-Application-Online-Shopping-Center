@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfume Collection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Z29sZCxqZXdlbHJ5LGJhY2tncm91bmR8fHx8fHwxNjk0MjA2Njk5&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080'); */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+        }
+        .header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: rgb(248, 246, 248);
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .back-link {
+            padding: 15px;
+            background-color: rgba(249, 146, 230, 0.7);
+            text-align: center;
+        }
+        .back-link a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .product-item h2 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .product-item .price {
+            font-weight: bold;
+            color: #B12704;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .product-item .rating {
+            color: #FFA41C;
+            font-size: 14px;
+        }
+        @media (max-width: 600px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 400px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+  <div class="header">
+        <h1>Anon</h1>
+    </div>
+    <div class="back-link">
+        <a href="index.html">← Back to Perfume Collection</a>
+    </div>     
+    <div class="product-grid"> 
+
+        <div class="product-item">
+            <a href="BuyJewllry.html"><img src="/anon-ecommerce-website-master/assets/images/perfume/Clothes Perfume/1.jpeg"></a> 
+            <h2>14K Gold Stud Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$99.99</div>
+            <div class="rating">★★★★☆ (1,234)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/14.jpeg" alt="Silver Hoop Earrings">
+            <h2>Sterling Silver Hoop Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$49.99</div>
+            <div class="rating">★★★★★ (5,678)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/3.jpeg" alt="Pearl Drop Earrings">
+            <h2>Freshwater Pearl Drop Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$79.99</div>
+            <div class="rating">★★★★☆ (987)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/16.jpeg" alt="Diamond Stud Earrings">
+            <h2>1/4 Carat Diamond Stud Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$299.99</div>
+            <div class="rating">★★★★★ (3,210)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+
+
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/3.jpeg" alt="Rose Gold Earrings">
+            <h2>Rose Gold Geometric Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$129.99</div>
+            <div class="rating">★★★★☆ (756)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+
+
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/fifth.jpeg" alt="Sapphire Stud Earrings">
+            <h2>Blue Sapphire Stud Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$199.99</div>
+            <div class="rating">★★★★★ (1,543)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+
+
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/eighth.jpeg alt="Chandelier Earrings">
+            <h2>Crystal Chandelier Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$89.99</div>
+            <div class="rating">★★★★☆ (678)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/sventh.jpeg" alt="Emerald Earrings">
+            <h2>Emerald and Diamond Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$349.99</div>
+            <div class="rating">★★★★★ (2,341)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+
+
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/sixth.jpeg" alt="Gold Hoop Earrings">
+            <h2>14K Gold Hoop Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$149.99</div>
+            <div class="rating">★★★★☆ (987)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+
+
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/niheth.jpeg" alt="Pearl Stud Earrings">
+            <h2>Akoya Pearl Stud Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$179.99</div>
+            <div class="rating">★★★★★ (3,456)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/10.jpeg" alt="Ruby Drop Earrings">
+            <h2>Ruby and White Gold Drop Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$279.99</div>
+            <div class="rating">★★★★☆ (876)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/11.jpeg" alt="Opal Stud Earrings">
+            <h2>Australian Opal Stud Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$159.99</div>
+            <div class="rating">★★★★★ (2,109)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+
+
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/12.jpeg" alt="Titanium Earrings">
+            <h2>Hypoallergenic Titanium Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$69.99</div>
+            <div class="rating">★★★★☆ (543)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+
+
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/13.jpeg" alt="Amethyst Earrings">
+            <h2>Amethyst and Silver Earrings</h2>
+            <div class="price" style="color: #cd2ea5;">$109.99</div>
+            <div class="rating">★★★★★ (1,876)</div>
+            <div class="buttons">
+                <button class="buy-button" style="color: #cd2ea5;">Buy Now</button>
+                <button class="cart-button" style="color: #cd2ea5;">Add to Cart</button>
+            </div>
+        </div>
+       
+    </div>
+</body>
+</html>

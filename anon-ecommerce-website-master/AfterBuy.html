@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Bill</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ff66b2; /* Dark pink heading */
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .scanner {
+            margin-bottom: 20px;
+        }
+        .scanner img {
+            max-width: 100%;
+            height: auto;
+        }
+        .details {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #ff66b2; /* Dark pink button */
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #ff99cc; /* Lighter pink button on hover */
+        }
+        .welcome-message {
+            font-size: 18px;
+            color: #333333;
+            margin-top: 20px;
+            display: none;
+            text-align: left;
+        }
+        .welcome-message strong {
+            color: #ff66b2; /* Dark pink bold text */
+        }
+        .divider {
+            border-bottom: 1px solid #ff99cc; /* Light pink divider */
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Scan to Pay</h1>
+    <div class="scanner">
+        <img src="/anon-ecommerce-website-master/assets/images/Scanner/Scanner.png" alt="Scanner">
+    </div>
+    <div class="details">
+        <p>Total Price: Rs. 410</p>
+    </div>
+    <div class="button-group">
+        <button class="button" onclick="goHome()">Home</button>
+        <button class="button" onclick="ReceiptPage()">Receipt</button>
+        <button class="button" onclick="generateBill()">Generate Bill</button>
+    </div>
+    <div class="welcome-message" id="welcomeMessage"></div>
+</div>
+
+<script>
+    function generateBill() {
+        const date = new Date();
+        const userName = "Rushi";  // Replace with actual user data
+        const orderSummary = `
+            <strong>Order Summary:</strong><br>
+            Product: Gold Stud Earrings<br>
+            Quantity: 1<br>
+            Total Price: Rs. 410
+        `;
+        const paymentConfirmation = `
+            <strong>Payment Confirmation:</strong><br>
+            Payment Method: UPI<br>
+            Transaction ID: TXN123456789
+        `;
+        const userDetails = `
+            <strong>User Information:</strong><br>
+            Name: ${userName}<br>
+            Date: ${date.toLocaleDateString()}<br>
+            Time: ${date.toLocaleTimeString()}
+        `;
+        const welcomeMessage = `
+            <strong>Welcome Message:</strong><br>
+            Thank you for your purchase, ${userName}!<br>
+            We appreciate your business and look forward to serving you again.
+        `;
+
+        document.getElementById("welcomeMessage").innerHTML = `
+            ${userDetails}
+            <div class="divider"></div>
+            ${orderSummary}
+            <div class="divider"></div>
+            ${paymentConfirmation}
+            <div class="divider"></div>
+            ${welcomeMessage}
+        `;
+        document.getElementById("welcomeMessage").style.display = "block";
+    }
+
+    function goHome() {
+        window.location.href = "index.html";  // Replace with actual home page link
+    }
+    function ReceiptPage(){
+        window.location.href = "Resciet.html";
+    }
+
+</script>
+
+</body>
+</html>

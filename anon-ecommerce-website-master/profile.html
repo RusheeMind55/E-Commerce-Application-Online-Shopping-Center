@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .header {
+            background-color: #f06292;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .profile-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .profile-header img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+        .profile-header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #f06292;
+        }
+        .profile-header .welcome-msg {
+            font-size: 18px;
+            color: #555;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #f06292;
+        }
+        .details, .purchased-products, .cart-products {
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .details p, .purchased-products ul, .cart-products ul {
+            margin: 5px 0;
+        }
+        .details p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .purchased-products ul, .cart-products ul {
+            list-style: none;
+            padding: 0;
+        }
+        .purchased-products li, .cart-products li {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-products .total-price {
+            font-weight: bold;
+            color: #f06292;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #f06292;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #e91e63;
+        }
+        .edit-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #e91e63;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>User Profile</h1>
+    </div>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="https://via.placeholder.com/100" alt="Profile Picture">
+            <div>
+                <h1>Welcome, User!</h1>
+                <div class="welcome-msg">Here are your profile details and purchased items.</div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Profile Details</h2>
+            <div class="details">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> johndoe@example.com</p>
+                <p><strong>Address:</strong> 123 Main Street, Anytown, India</p>
+                <p><strong>Mobile No:</strong> +91 9876543210</p>
+                <a href="edit-profile.html" class="button edit-button">Edit Details</a>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Purchased Products</h2>
+            <div class="purchased-products">
+                <ul>
+                    <li>14K Gold Stud Earrings <span>$99.99</span></li>
+                    <li>Sterling Silver Hoop Earrings <span>$49.99</span></li>
+                    <li>Freshwater Pearl Drop Earrings <span>$79.99</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Cart Products</h2>
+            <div class="cart-products">
+                <ul>
+                    <li>1/4 Carat Diamond Stud Earrings <span>$299.99</span></li>
+                    <li>Rose Gold Geometric Earrings <span>$129.99</span></li>
+                    <li>Blue Sapphire Stud Earrings <span>$199.99</span></li>
+                </ul>
+                <div class="total-price">Total Price: ₹410</div>
+            </div>
+        </div>
+        <div class="section">
+            <a href="make-payment.html" class="button">Proceed to Payment</a>
+        </div>
+    </div>
+    <script>
+        // Retrieve user details from localStorage
+        document.getElementById('profile-email').textContent = localStorage.getItem('email');
+        document.getElementById('profile-mobile').textContent = localStorage.getItem('mobile');
+        document.getElementById('profile-address').textContent = localStorage.getItem('address');
+    </script>
+</body>
+</html>

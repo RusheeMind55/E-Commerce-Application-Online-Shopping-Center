@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page with Navbar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #232f3e;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header .search-bar {
+            flex: 1;
+            margin: 0 20px;
+            position: relative;
+        }
+        .header .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .header .search-bar button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #febd69;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .header .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .header .nav-links a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .header .nav-links a:hover {
+            background-color: #37475a;
+            border-radius: 4px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+        }
+        .product-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .product-item h2 {
+            font-size: 16px;
+            color: #333;
+        }
+        .product-item .price {
+            font-weight: bold;
+            color: #B12704;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        .buttons button {
+            background-color: #cd2ea5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .buttons button:hover {
+            background-color: #a1288e;
+        }
+        .profile {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px;
+        }
+        .profile h2 {
+            margin-top: 0;
+        }
+        .profile button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .profile button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="header">
+        <div class="logo">MyStore</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products">
+            <button>Search</button>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Categories</a>
+            <a href="#">Deals</a>
+            <a href="#">Orders</a>
+            <a href="#">Profile</a>
+            <a href="#">Cart</a>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/Earing_Images/1.jpeg" alt="Product 1">
+            <h2>Gold Stud Earrings</h2>
+            <div class="price">₹99.99</div>
+            <div class="buttons">
+                <button onclick="buyProduct('Gold Stud Earrings', 99.99)">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="/anon-ecommerce-website-master/assets/images/Earing_Images/2.jpeg" alt="Product 2">
+            <h2>Sterling Silver Hoop Earrings</h2>
+            <div class="price">₹49.99</div>
+            <div class="buttons">
+                <button onclick="buyProduct('Sterling Silver Hoop Earrings', 49.99)">Buy Now</button>
+            </div>
+        </div>
+        <!-- Add more products as needed -->
+    </div>
+
+    <!-- User Profile Section -->
+    <div class="profile">
+        <h2>User Profile</h2>
+        <div id="profile-info">
+            <p>Name: <span id="user-name">John Doe</span></p>
+            <p>Order Count: <span id="order-count">0</span></p>
+            <p>Total Price: ₹<span id="total-price">0.00</span></p>
+            <p>Order Details:</p>
+            <div id="user-details">No purchases yet.</div>
+        </div>
+        <button onclick="makeFinalPayment()" >Make Payment</button>
+    </div>
+
+    <script>
+        let orderCount = 0;
+        let totalPrice = 0;
+        let orderDetails = '';
+
+        function buyProduct(productName, productPrice) {
+            orderCount++;
+            totalPrice += productPrice;
+            orderDetails += `<p>${productName} - ₹${productPrice.toFixed(2)}</p>`;
+
+            // Update profile information
+            document.getElementById('order-count').innerText = orderCount;
+            document.getElementById('total-price').innerText = totalPrice.toFixed(2);
+            document.getElementById('user-details').innerHTML = orderDetails;
+        }
+
+        function makeFinalPayment() {
+            if (orderCount > 0) {
+                alert(`Payment of ₹${totalPrice.toFixed(2)} for ${orderCount} Scan The Code And Pay The Bill!`);
+                // Reset order count and total price after payment
+                orderCount = 0;
+                totalPrice = 0;
+                orderDetails = '';
+
+                // Update profile information after payment
+                document.getElementById('order-count').innerText = orderCount;
+                document.getElementById('total-price').innerText = totalPrice.toFixed(2);
+                document.getElementById('user-details').innerText = 'No purchases yet.';
+            } else {
+                alert('No items to pay for.');
+            }
+
+            window.location.href = "AfterBuy.html";
+
+        }
+    </script>
+</body>
+</html>
